@@ -1,4 +1,15 @@
-document.addEventListener("DOMContentLoaded", function() {
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SNBTV0WE0H"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-SNBTV0WE0H');
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
     const promotion1 = document.querySelector(".Promotion1");
     const images = promotion1.querySelectorAll("img");
     const imageCount = images.length;
@@ -6,35 +17,29 @@ document.addEventListener("DOMContentLoaded", function() {
     let currentIndex = 0;
     const intervalTime = 3000;
 
-    
     for (let i = 1; i < imageCount; i++) {
         images[i].style.display = "none";
         images[i].style.transition = "opacity 0.5s ease"
     }
 
-    
     function switchToNextImage() {
         images[currentIndex].style.display = "none";
         currentIndex = (currentIndex + 1) % imageCount;
         images[currentIndex].style.display = "block";
     }
 
-    
-    const interval = setInterval(switchToNextImage, intervalTime);
+    let interval = setInterval(switchToNextImage, intervalTime);
 
-    
     promotion1.addEventListener('mouseenter', function() {
         clearInterval(interval);
     });
 
-   
     promotion1.addEventListener('mouseleave', function() {
         interval = setInterval(switchToNextImage, intervalTime);
     });
-});
+  });
 
-
-document.addEventListener("DOMContentLoaded", function() {
+  document.addEventListener("DOMContentLoaded", function() {
     const now = new Date().getTime();
     const twoDaysInMillis = 2 * 24 * 60 * 60 * 1000; // 2 days in milliseconds
     const targetDate = now + twoDaysInMillis;
@@ -55,5 +60,5 @@ document.addEventListener("DOMContentLoaded", function() {
             countdownElement.textContent = "NEW PRODUCT ARRIVED!";
         }
     }, 1000);
-});
-
+  });
+</script>
